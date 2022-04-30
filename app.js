@@ -114,7 +114,7 @@ app.post("/cooking/:username/:postid/edit", cookingVidImage.single('reImage'), p
 app.post("/public/:postid/:type/edit", postValidator.editPostValidator, postController.updatePost);
 
 // DELETE VIDEO
-app.get("/public/delete/:postid/:type", catchAsyncErrors(viewController.deletePost));
+app.post("/public/delete/:postid/:type", catchAsyncErrors(viewController.deletePost));
 
 // USER
 // edit and delete users

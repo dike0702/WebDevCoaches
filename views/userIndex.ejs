@@ -114,7 +114,7 @@
     </div>
 <% } %>
 <div class="viewCoaches">
-    <form action="/user:<%=type%>" method="GET">
+    <form action="/user/<%=type%>" method="GET">
         <button type="submit" id="viewCoachesButton">See All Coaches</button>
     </form>
 </div>
@@ -157,7 +157,7 @@
                     <form action="/public/<%=user.username%>/<%=data.postid%>/<%=type%>" method="GET">
                         <button id="editButton">Edit</button>
                     </form>
-                    <form action="/public/delete/<%= data.postid %>/<%= type %>" method="GET">
+                    <form action="/public/delete/<%=data.postid%>/<%=type%>" method="POST">
                         <button id="deleteButton">Delete</button>
                     </form>
                 <% } %> 
