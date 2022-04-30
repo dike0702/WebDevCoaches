@@ -147,13 +147,6 @@ async function reviewPage(req, res){
     res.render("reviewIndex", {data:allreview, req, postid});
 }
 
-async function addReview(req, res){
-    const postid = req.params['postid'];
-    postController.reviewUpload(req, res); 
-    const url = "/review/" + postid;
-    res.redirect(url);   
-}
-
 async function renderReview(req, res){
     const postid = req.params['postid'];
     res.render("postReview", {postid});
@@ -184,7 +177,6 @@ module.exports = {
     deletePost,
     editPage,
     reviewPage,
-    addReview,
     renderReview,
     chatPage,
 }

@@ -110,6 +110,8 @@ async function reviewUpload(req, res){
     const postid = req.params['postid'];
 
     await postModel.addReview(req, res, userID, postid);
+    const url = "/review/" + postid;
+    res.redirect(url);
 }
 
 async function updatePost(req, res){

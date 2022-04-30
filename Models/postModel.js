@@ -128,7 +128,7 @@ async function addCookingPost(req, res, userID){
 
 async function addReview(req, res, userID, postid){
     const user = userModel.getUserByUserid(userID);
-    const username = user.username;
+    const username = req.session.user.username;
     const rate   = req.body.rate;
     const reason = req.body.reason;
     const id = postid;

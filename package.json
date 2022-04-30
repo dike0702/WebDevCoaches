@@ -6,7 +6,8 @@
   "author": "Yuji Kikuchi, Yuto Morishita, Daiki Morita",
   "scripts": {
     "init-db": "node ./Database/init-db.js",
-    "start-dev": "npm run init-db && nodemon server.js"
+    "start-dev": "npm run init-db && nodemon server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "argon2": "^0.28.5",
@@ -31,5 +32,18 @@
     "better-sqlite3": "^7.5.1",
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dike0702/WebDevCoaches.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dike0702/WebDevCoaches/issues"
+  },
+  "homepage": "https://github.com/dike0702/WebDevCoaches#readme"
 }

@@ -126,7 +126,7 @@ app.get("/edit/:username/:type", viewController.editPage);
 // REVIEW
 // review page
 app.get("/review/:postid", catchAsyncErrors(viewController.reviewPage));
-app.post("/api/review/:postid/post", postValidator.reviewPostValidator, viewController.addReview);
+app.post("/api/review/:postid/post", postController.reviewUpload);
 app.get("/postReview/:postid", catchAsyncErrors(viewController.renderReview));
 
 // CHAT
