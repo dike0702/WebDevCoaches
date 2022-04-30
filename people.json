@@ -1,0 +1,18 @@
+{
+  "profiles": [
+    {
+      "firstname": "Yuji",
+      "lastname": "Kikuchi"
+    },
+
+    {
+      "firstname": "Yuto",
+      "lastname": "Morishita"
+    },
+
+    {
+      "firstname": "Daiki",
+      "lastname": "Morita"
+    }
+  ]
+}

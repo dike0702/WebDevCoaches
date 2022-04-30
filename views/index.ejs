@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <style>
+        body {
+            background-color: rgb(54, 139, 29);
+        }
+        img {
+            width: 500px ; 
+            height: 300px ;
+            border-radius:10px;
+        }
+        .mainBodyContainer {
+            margin: auto;
+            max-width: 100%;
+            background-color: rgb(54, 139, 29);
+        }
+        .card {
+            background: black;
+            margin:auto;
+            width: 500px;
+            padding:10px;
+            border-radius: 10px;
+            position:relative;
+        }
+        .card-img {
+            margin:auto;
+            position:relative;
+            width:500px;
+        }
+        .title {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 15px;
+            background-color: snow;
+        }
+        .card-cont {
+            margin:auto;
+            width:500px;
+            word-break: break-all;
+        }
+        #card-cont {
+            color:white;
+        }
+
+        .uploadContainer {
+            margin-right:10px;
+            margin-left:10px;
+        }
+        .mypageContainer {
+            margin-right:10px;
+            margin-left: 10px;
+        }
+        #uploadButton {
+            float:right;
+            margin:10px;
+        }
+        #mypageButton {
+            float:right;
+            margin:10px;
+        }
+        #headingText {
+            color:white;
+            text-align: center;
+        }
+        #logoutButton {
+            margin:10px;
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="headingText">All Posts</h1>
+    <%if(req.session.role) { %>
+        <div class="uploadContainer">
+            <form action="/<%= type %>Upload" method="GET">
+                <button type="submit" id="uploadButton">Upload</button>
+            </form>
+        </div>
+    <% } %>
+    <%if(req.session.role) { %>
+        <div class="mypageContainer">
+            <form action="/mypage/<%=type%>" method="GET">
+                <button type="submit" id="mypageButton">My Page</button>
+            </form>
+        </div>
+    <% } %>
+    <div class="logout">
+        <form action="/logout" method="GET">
+            <button type="submit" id="logoutButton">Log Out</button>
+        </form>
+    </div>
+
+    <div class="viewCoaches">
+        <form action="/user/<%=type%>" method="GET">
+            <button type="submit" id="viewCoachesButton">See All Coaches</button>
+        </form>
+    </div>
+
+    <div class="mainBodyContainer">
+        <%for(let data of allData) { %>
+            <div class="card">
+                <div class="card-img">
+                    <a href=<%-data.url%>>
+                    <img src='<%=data.filename%>' alt=<%=data.originalname%>>
+                    </a>
+                    <div class="title"><%=data.title%></div>
+                    <div class="reviewButton">
+                        <form action="/review/<%=data.postid%>" method="GET">
+                            <button type="submit" id="reviewButton">Show Review</button>
+                        </form>
+                    </div>
+                    <div class="chatButton">
+                        <form action="/chat/<%=data.postid%>/<%=type%>" method="GET">
+                            <button type="submit" id="chatButton">chat room</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-cont">
+                    <p id="card-cont"><%=data.description%></p>
+                    <a href="/user/profile/<%=data.contributer%>/<%=type%>">
+                        <spam id="card-cont">Coach:</spam><strong id="card-cont"><%=data.contributer%></strong>
+                    </a>
+                    <address id="card-cont">Email:<a href="mailto:"+<%=data.email%>><%=data.email%></a></address>
+                </div>
+            </div>
+            <br><br>
+        <% } %>
+    </div>
+</body>
+</html>

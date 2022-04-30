@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <style>
+        .title{
+            color:white;
+            text-align: center;
+        }
+        a{
+            transition: color 0.3s;
+        }
+        a:visited{
+            color : white;
+        }
+        a:hover{
+            color : beige;
+        }
+        body {
+            background-color: rgb(54, 139, 29);
+        }
+        .star {
+            color: orange;
+            font-size: 25px;
+        }
+        .row{
+            background-color: whitesmoke;
+            width: 250px;
+            border-radius: 10px;
+        }
+        p{
+            margin: 0.5em 3px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #reviewer{
+            font-size: 14px;
+            color: rgb(81, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Review</h1>
+    <a href="/postReview/<%= postid %>" class="reviewWrite">Click to Write Review</a>
+
+    <div class="reviews">
+        <% for(const review of data){ %>
+            <ul>
+                <li>
+                    <div class="row">
+                        <p id="reviewer"><%= review.reviewer %> </p>
+                        <p>
+                            <% for(let i = 0; i < review.rate; i++) { %>
+                                <span class="star">★</span>
+                            <% } %> 
+                            <span id="rate"> <%= review.rate %> </span>
+                        </p>
+                        <p><%= review.reason %> </p>
+                    </div>
+                </li>
+            </ul>
+        <% } %> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Coaches</title>
+</head>
+<body>
+    <% for(const user of users) { %> 
+        <div>
+            <div>
+                <span>Username: </span><%=user.username%><br>
+                <address id="card-cont">Email:<a href="mailto:"+<%=user.email%>><%=user.email%></a></address>
+            </div>
+            <form action="/user/profile/<%=user.username%>/<%=type%>" method="GET">
+                <button>Go To User Page</button>
+            </form>
+        </div>
+    <% } %> 
+</body>
+</html>

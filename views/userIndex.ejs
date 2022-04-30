@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        body {
+            background-color: rgb(54, 139, 29);
+        }
+        img {
+            width: 500px; 
+            height: 300px ;
+            border-radius:10px;
+        }
+        h1{
+            color:white;
+            text-align: center;
+        }
+        .mainBodyContainer {
+            margin: auto;
+            max-width: 100%;
+            background-color: rgb(54, 139, 29);
+        }
+        .card {
+            margin: 0px auto;
+            width: 500px;
+            background: black;
+            position:relative;
+            padding:10px;
+            border-radius: 10px;
+
+        }
+        .card-img {
+            margin:auto;
+            position:relative;
+            width:500px;
+        }
+        .title {
+            width: 25%; 
+            padding: 0.25em;
+            top: 8px;
+            left: 16px;
+            font-size: 15px;
+            background-color: white;
+        }
+        .card-cont {
+            margin:auto;
+            width:500px;
+            word-break: break-all;
+        }
+        .buttons{
+            display: flex;
+            list-style-type: none;
+        }
+        #card-cont {
+            color:white;
+        }
+        #uploadButton {
+            float:right;
+            margin: 10px;
+        }
+        #logoutButton {
+            margin:10px;
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        #headingText {
+            color:white;
+            text-align: center;
+        }
+        #deleteButton {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 12px;
+            color: white;
+            background-color: rgb(54, 139, 29);
+        }
+        #editButton {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 12px;
+            color: white;
+            background-color: rgb(54, 139, 29);
+        }
+        .row{
+            background-color: whitesmoke;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .user{
+            margin: 0.5em 3px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #coachTitle{
+            font-size: 14px;
+            color: rgb(81, 80, 80);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My Page</h1>
+<%if(req.session.role) { %>
+    <div class="uploadContainer">
+        <form action="/drawingUpload" method="GET">
+            <button type="submit" id="uploadButton">Upload</button>
+        </form>
+    </div>
+<% } %>
+<div class="viewCoaches">
+    <form action="/user:<%=type%>" method="GET">
+        <button type="submit" id="viewCoachesButton">See All Coaches</button>
+    </form>
+</div>
+<div class="logout">
+    <form action="/logout" method="GET">
+        <button type="submit" id="logoutButton">Log Out</button>
+    </form>
+</div>
+
+<div class="MyInfo">
+    <div class="userInformation">
+        <div class="row">
+            <p class="user" id="coachTitle">Coach for <%= type %></p>
+            <p class="user" id="username">Username: <%= user.username %> </p>
+            <p class="user" id="email">Email:    <%= user.email %> </p>
+            <p class="user" id="bio">Bio:      <%= user.bio %> </p>
+        </div>
+        <form action="/edit/<%= user.username %>/<%= type %>" method="GET">
+            <button>edit your account</button>
+        </form>
+        <form action="/delete/<%= user.username %>" method="GET">
+            <button>delete your account</button>
+        </form>
+    </div>
+    <%for(let data of allPosts) { %>
+        <div class="card">
+            <div class="card-img">
+                <div class="title"><%=data.title%></div>
+                <a href="<%-data.url%>">
+                <img src='/<%=data.filename%>' alt=<%=data.originalname%>>
+                </a>
+            </div>
+            <div class="card-cont">
+                <p id="card-cont"><%=data.description%></p>
+                <spam id="card-cont">Coach:</spam><strong id="card-cont"><%=data.contributer%></strong>
+                <!-- <address id="card-cont">Email:<a href="mailto:"+<%=data.email%>><%=data.email%></a></address> -->
+            </div>
+            <ul class="buttons">
+                <% if(user.username == data.contributer) {%>
+                    <form action="/public/<%=user.username%>/<%=data.postid%>/<%=type%>" method="GET">
+                        <button id="editButton">Edit</button>
+                    </form>
+                    <form action="/public/delete/<%= data.postid %>/<%= type %>" method="GET">
+                        <button id="deleteButton">Delete</button>
+                    </form>
+                <% } %> 
+            </ul>
+        </div>
+        <br><br>
+    <% } %>
+</div>
+</body>
+</html>

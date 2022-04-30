@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Info</title>
+</head>
+<body>
+    <h1>Edit your information</h1>
+    <form action="/api/edit/<%=user.username%>/<%=type%>" method="POST">
+        <!-- can not be modified -->
+        <p class="username">Username: <%= user.username %> </p>
+
+        <label for="email">Email:</label>
+        <textarea name="email"><%= user.email %> </textarea>
+
+        <label for="bio">Bio:</label>
+        <textarea name="bio" cols="50"rows="10"><%= user.bio %></textarea>
+        
+        <button>Submit</button>
+    </form>
+</body>
+</html>

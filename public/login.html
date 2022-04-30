@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaches Login Screen</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <div class= "loginPage">
+        <h1>Login</h1><br><br>
+        <form action="/api/login" method="POST" id="loginForm">
+            <div id="loginFormContainer">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username"><br><br>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password"><br><br>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="register" id="register">
+            <span>No Account? Register:</span>
+            <a href="/register">here</a>
+        </div>
+    </div>
+    
+</body>
+</html>

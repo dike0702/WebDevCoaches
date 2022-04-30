@@ -1,0 +1,35 @@
+{
+  "name": "coaches",
+  "version": "0.1.0",
+  "description": "A web App to find coach",
+  "main": "server.js",
+  "author": "Yuji Kikuchi, Yuto Morishita, Daiki Morita",
+  "scripts": {
+    "init-db": "node ./Database/init-db.js",
+    "start-dev": "npm run init-db && nodemon server.js"
+  },
+  "dependencies": {
+    "argon2": "^0.28.5",
+    "body-parser": "^1.19.2",
+    "connect-redis": "^6.1.3",
+    "crypto": "^1.0.1",
+    "crypto-random-hex": "^1.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.16.3",
+    "express-flash": "^0.0.2",
+    "express-passport-logout": "^0.1.0",
+    "express-session": "^1.17.2",
+    "helmet": "^5.0.2",
+    "joi": "^17.6.0",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.4",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "better-sqlite3": "^7.5.1",
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}

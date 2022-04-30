@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Your Post</title>
+    <style>
+        img {
+            width: 500px auto; 
+            height: 300px ;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="imageAndInfo">
+        <div id="image">
+           <img src='/<%=post.filename%>' alt=<%=post.originalname%>><br> 
+        </div>
+        <p>Current Info for this post:</p>
+        <div id="info">
+            <span>Title: <%= post.title %></span><br>
+            <span>Description: <%= post.description %></span><br>
+            <span>URL: <%= post.url %></span><br>
+            
+        </div>
+    </div>
+    <br>
+    <p>Edit Field:</p>
+    <div>
+        <form action="/<%=type%>/<%=username%>/<%=post.postid%>/edit" method="POST" enctype="multipart/form-data">
+            <input type="hidden" id="postid" name="postid" value="<%=post.postid%>" readonly>    
+                <label for="reImage">New Image:</label>
+                <input type="file" id="reImage" name="reImage"><br>
+    
+                <label for="reTitle">New Title:</label>
+                <input id="reTitle" name="reTitle"><br>
+    
+                <label for="reDesc">New Description:</label>
+                <textarea id="reDesc" name="reDesc" col="30" row="5"></textarea><br>
+    
+                <label for="reUrl">New URL:</label>
+                <input id="reUrl" name="reUrl"><br>
+    
+                <button>Update</button>
+        </form>
+    </div>
+    
+</body>
+</html>

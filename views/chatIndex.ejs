@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 30px;
+        box-sizing: border-box;
+    }
+    #room {
+        width: 100%;
+        min-height: 100vh;
+        overflow: scroll;
+        background-color: rgb(113, 147, 193);
+    }
+      
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+    }
+      
+    .box-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+      
+    .box-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+      
+    .message-box {
+        padding: 50px;
+        max-width: 40%;
+        margin: 10px;
+        border-radius: 30px;
+    }
+      
+    .white {
+        background-color: white;
+    }
+      
+    .green {
+        background-color: yellowgreen;
+    }
+      </style>
+</head>
+<body>
+    <h1 class="title">Chat for <%= type %> </h1>
+    <form action="/api/chat/<%= postid %>" method="POST">
+        <div class="chatpost">
+            <textarea id="message" name="message" cols="30" row="5" placeholder="TEXT" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="chat">
+        <a><%= chat.speaker %> </a>
+        <a><%= chat.message %> </a>
+    </div>
+</body>
+</html>

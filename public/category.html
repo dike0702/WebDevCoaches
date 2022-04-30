@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaches Category</title>
+    <link rel="stylesheet" type="text/css" href="css/category.css">
+    <script src="js/category.js" defer></script>
+</head>
+<body>
+    <div class="sideToolbarContainer">
+        <form action="/logout" method="GET">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+    <div class="categoryPage">
+        <form action="/category" method="GET" id="categoryForm">
+            <label for="category">Find or be a coach in:</label>
+            <select id="category" name="category" required>
+                <option value="1">Gaming</option>
+                <option value="2">Cooking</option>
+                <option value="3">Drawing</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="headerContainer">
+        <h1>POST:Gaming</h1>
+    </div>
+    <form action="/api/gamingUpload" method="POST" id="uploadForm" enctype="multipart/form-data">
+        <div class="bodyContainer">
+            <div class="uploadField">
+                <label for="gamingImage">Image for your video:</label>
+                <input type="file" id="gamingVidImage" name="gamingVidImage"><br><br>
+            </div>
+            <div class="titleField">
+                <input type="title" id="title" name="title" placeholder="Title"><br><br>
+            </div>
+            <div class="descriptionField">
+                <textarea id="description" cols="30" rows="5" name="description" placeholder="Description"></textarea><br><br>
+            </div>
+            <div class="hyperlinkField">
+                <label for="url">URL for your video:</label>
+                <input type="url" id="url" name="url" placeholder="URL"><br><br>
+            </div>
+            <button type="submit">Post</button>
+        </div>
+    </form>
+</body>
+</html>

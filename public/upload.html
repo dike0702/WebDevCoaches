@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploading videos</title>
+    <link rel="stylesheet" type="text/css" href="upload.css">
+    <script src="postModel.js"></script>
+</head>
+<body>
+    <form method="POST"action="/api/upload">
+        <header>
+            <a href="category.html" style="font-size:40pt;font-weight:bold;">Coaches.com</a>
+        </header>
+        <div class="main">
+            <div class="videoTitle">
+                <h1>Upload Video</h1>
+                <p1>Now you can upload your video!<br><br></p1>
+                <p2>Post Video<br>
+                    <input type="file"id="video"><br><br>
+                </p2>
+                <p3>
+                    <input type="title"id="title"placeholder="Title"><br><br>
+                </p3>
+            </div>
+            <div class="description">
+                <textarea id="description"cols="50"rows="10"placeholder="Description"></textarea>
+            </div>
+            <input id="Button1"type="button" onclick="addPosts();" value="POST">
+            <!-- <button>POST</button> -->
+        </div>
+    </form>
+    
+</body>
+</html>

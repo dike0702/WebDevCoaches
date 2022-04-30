@@ -1,0 +1,95 @@
+body{
+    background-color: rgb(202, 206, 203);
+    overflow: scroll;
+    text-align:center;
+}
+header{
+    background-color: white;
+    height:77px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+}
+a{
+    /* font-size: 100;
+    font-weight: bold; */
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+.main{
+    background-color: white;
+}
+h1{
+    padding:20px 0px 0px 30px;
+	font-family:Arial, Helvetica, sans-serif;	
+} 
+p1{
+    padding:20px 0px 0px 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+p2{
+    font-size: 20px;
+}
+p2 input[type="file"]{
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding:20px 0px 0px 30px;
+    font-size: 20px;
+}
+/* p2 span{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial;
+    background: #ee7800;
+    padding: 8px 0;
+    border-radius: 16px;
+    max-width: 240px;
+    transition: .3s;
+    cursor:pointer;
+}
+p2 input[type="file"]:focus{
+    display: none;
+}*/
+p3 input[type='title'] {
+	border: 2px solid rgb(15, 15, 17);  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 0.5em;          /* 内側の余白量 */
+    background-color: snow;  /* 背景色 */
+    font-size: 1em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* p3 input[type='title']:focus {
+	outline: none;
+} */
+.description{
+    padding:20px 0px 0px 30px;
+}
+.description textarea{
+    border: 2px solid rgb(15, 15, 17);
+    border-radius: 0.67em;
+    padding: 0.5em;
+    background-color: snow;
+    font-size: 1em;
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    color: white;
+    background-color: #ee7800;
+}
+button :hover{
+    color: white;
+    background: #f56500;
+}
+/* p2 input{
+    display: none;
+} */
+p3{
+    padding:20px 0px 0px 30px;
+}
+.description{
+    padding:20px 0px 0px 30px;
+}

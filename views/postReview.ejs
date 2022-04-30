@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Review</title>
+</head>
+<body>
+    <form action="/api/review/<%= postid %>/post" method="POST">
+        <div class="rateField">
+            <label id="rateLabel">Enter your rate 1 ~ 5</label>
+            <input type="number" id="rate" name="rate" min="1" max="5" required><br>
+            <textarea id="reason" name="reason" cols="30" rows="5" placeholder="Reason" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
